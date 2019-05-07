@@ -9,25 +9,25 @@
 /* Begin PBXBuildFile section */
 		2D51442D2281A62400437269 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2D51442C2281A62400437269 /* AppDelegate.swift */; };
 		2D51442F2281A62400437269 /* GameScene.sks in Resources */ = {isa = PBXBuildFile; fileRef = 2D51442E2281A62400437269 /* GameScene.sks */; };
-		2D5144312281A62400437269 /* Actions.sks in Resources */ = {isa = PBXBuildFile; fileRef = 2D5144302281A62400437269 /* Actions.sks */; };
 		2D5144332281A62400437269 /* GameScene.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2D5144322281A62400437269 /* GameScene.swift */; };
 		2D5144352281A62400437269 /* GameViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2D5144342281A62400437269 /* GameViewController.swift */; };
 		2D5144382281A62400437269 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 2D5144362281A62400437269 /* Main.storyboard */; };
 		2D51443A2281A62500437269 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 2D5144392281A62500437269 /* Assets.xcassets */; };
 		2D51443D2281A62500437269 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 2D51443B2281A62500437269 /* LaunchScreen.storyboard */; };
+		2D5144452281A69A00437269 /* level1.txt in Resources */ = {isa = PBXBuildFile; fileRef = 2D5144442281A69A00437269 /* level1.txt */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
 		2D5144292281A62400437269 /* Marble-Maze.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Marble-Maze.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		2D51442C2281A62400437269 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		2D51442E2281A62400437269 /* GameScene.sks */ = {isa = PBXFileReference; lastKnownFileType = file.sks; path = GameScene.sks; sourceTree = "<group>"; };
-		2D5144302281A62400437269 /* Actions.sks */ = {isa = PBXFileReference; lastKnownFileType = file.sks; path = Actions.sks; sourceTree = "<group>"; };
 		2D5144322281A62400437269 /* GameScene.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameScene.swift; sourceTree = "<group>"; };
 		2D5144342281A62400437269 /* GameViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameViewController.swift; sourceTree = "<group>"; };
 		2D5144372281A62400437269 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		2D5144392281A62500437269 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		2D51443C2281A62500437269 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		2D51443E2281A62500437269 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		2D5144442281A69A00437269 /* level1.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = level1.txt; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -62,13 +62,13 @@
 			children = (
 				2D51442C2281A62400437269 /* AppDelegate.swift */,
 				2D51442E2281A62400437269 /* GameScene.sks */,
-				2D5144302281A62400437269 /* Actions.sks */,
 				2D5144322281A62400437269 /* GameScene.swift */,
 				2D5144342281A62400437269 /* GameViewController.swift */,
 				2D5144362281A62400437269 /* Main.storyboard */,
 				2D5144392281A62500437269 /* Assets.xcassets */,
 				2D51443B2281A62500437269 /* LaunchScreen.storyboard */,
 				2D51443E2281A62500437269 /* Info.plist */,
+				2D5144442281A69A00437269 /* level1.txt */,
 			);
 			path = "Marble-Maze";
 			sourceTree = "<group>";
@@ -131,11 +131,11 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				2D5144452281A69A00437269 /* level1.txt in Resources */,
 				2D5144382281A62400437269 /* Main.storyboard in Resources */,
 				2D51442F2281A62400437269 /* GameScene.sks in Resources */,
 				2D51443A2281A62500437269 /* Assets.xcassets in Resources */,
 				2D51443D2281A62500437269 /* LaunchScreen.storyboard in Resources */,
-				2D5144312281A62400437269 /* Actions.sks in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -304,7 +304,7 @@
 				PRODUCT_BUNDLE_IDENTIFIER = "com.michelegalvagno.Marble-Maze";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
+				TARGETED_DEVICE_FAMILY = 2;
 			};
 			name = Debug;
 		};
@@ -322,7 +322,7 @@
 				PRODUCT_BUNDLE_IDENTIFIER = "com.michelegalvagno.Marble-Maze";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
+				TARGETED_DEVICE_FAMILY = 2;
 			};
 			name = Release;
 		};
