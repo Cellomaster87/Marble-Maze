@@ -15,8 +15,8 @@
 		2D51443A2281A62500437269 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 2D5144392281A62500437269 /* Assets.xcassets */; };
 		2D51443D2281A62500437269 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 2D51443B2281A62500437269 /* LaunchScreen.storyboard */; };
 		2D5144452281A69A00437269 /* level1.txt in Resources */ = {isa = PBXBuildFile; fileRef = 2D5144442281A69A00437269 /* level1.txt */; };
-		2D51444A2282EA7F00437269 /* level3.txt in Resources */ = {isa = PBXBuildFile; fileRef = 2D5144482282EA7F00437269 /* level3.txt */; };
-		2D51444B2282EA7F00437269 /* level2.txt in Resources */ = {isa = PBXBuildFile; fileRef = 2D5144492282EA7F00437269 /* level2.txt */; };
+		2D51444E2282EE5400437269 /* level3.txt in Resources */ = {isa = PBXBuildFile; fileRef = 2D51444C2282EE5400437269 /* level3.txt */; };
+		2D51444F2282EE5400437269 /* level2.txt in Resources */ = {isa = PBXBuildFile; fileRef = 2D51444D2282EE5400437269 /* level2.txt */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -30,8 +30,8 @@
 		2D51443C2281A62500437269 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		2D51443E2281A62500437269 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		2D5144442281A69A00437269 /* level1.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = level1.txt; sourceTree = "<group>"; };
-		2D5144482282EA7F00437269 /* level3.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = level3.txt; sourceTree = "<group>"; };
-		2D5144492282EA7F00437269 /* level2.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = level2.txt; sourceTree = "<group>"; };
+		2D51444C2282EE5400437269 /* level3.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = level3.txt; sourceTree = "<group>"; };
+		2D51444D2282EE5400437269 /* level2.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = level2.txt; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -73,8 +73,8 @@
 				2D51443B2281A62500437269 /* LaunchScreen.storyboard */,
 				2D51443E2281A62500437269 /* Info.plist */,
 				2D5144442281A69A00437269 /* level1.txt */,
-				2D5144492282EA7F00437269 /* level2.txt */,
-				2D5144482282EA7F00437269 /* level3.txt */,
+				2D51444D2282EE5400437269 /* level2.txt */,
+				2D51444C2282EE5400437269 /* level3.txt */,
 			);
 			path = "Marble-Maze";
 			sourceTree = "<group>";
@@ -138,8 +138,8 @@
 			buildActionMask = 2147483647;
 			files = (
 				2D5144452281A69A00437269 /* level1.txt in Resources */,
-				2D51444B2282EA7F00437269 /* level2.txt in Resources */,
-				2D51444A2282EA7F00437269 /* level3.txt in Resources */,
+				2D51444F2282EE5400437269 /* level2.txt in Resources */,
+				2D51444E2282EE5400437269 /* level3.txt in Resources */,
 				2D5144382281A62400437269 /* Main.storyboard in Resources */,
 				2D51442F2281A62400437269 /* GameScene.sks in Resources */,
 				2D51443A2281A62500437269 /* Assets.xcassets in Resources */,

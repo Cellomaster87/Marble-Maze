@@ -23,7 +23,7 @@ class GameScene: SKScene, SKPhysicsContactDelegate {
     var lastTouchPosition: CGPoint?
     
     var motionManager: CMMotionManager?
-    var acceleration: Double = 25.0
+    var acceleration: Double = 50.0
     var isGameOver = false
     
     var scoreLabel: SKLabelNode!
@@ -92,7 +92,7 @@ class GameScene: SKScene, SKPhysicsContactDelegate {
                 } else if letter == "f" {
                     loadFinishPoint(at: position)
                 } else if letter == " " {
-                    break
+                    // do nothing
                 } else {
                     fatalError("Unknown level letter: \(letter)")
                 }
@@ -133,9 +133,7 @@ class GameScene: SKScene, SKPhysicsContactDelegate {
     }
     
     func loadWall(at position: CGPoint) {
-//        let node = createNode(called: "block", at: position)
-        let node = SKSpriteNode(imageNamed: "block")
-        node.position = position
+        let node = createNode(called: "block", at: position)
         
         node.physicsBody = SKPhysicsBody(rectangleOf: node.size)
         node.physicsBody?.categoryBitMask = CollisionTypes.wall.rawValue
@@ -145,10 +143,7 @@ class GameScene: SKScene, SKPhysicsContactDelegate {
     }
     
     func loadVortex(at position: CGPoint) {
-//        let node = createNode(called: "vortex", at: position)
-        let node = SKSpriteNode(imageNamed: "vortex")
-        node.name = "vortex"
-        node.position = position
+        let node = createNode(called: "vortex", at: position)
         
         node.run(SKAction.repeatForever(SKAction.rotate(byAngle: .pi, duration: 1)))
         node.physicsBody = SKPhysicsBody(circleOfRadius: node.size.width / 2)
@@ -162,10 +157,7 @@ class GameScene: SKScene, SKPhysicsContactDelegate {
     }
     
     func loadStar(at position: CGPoint) {
-//        let node = createNode(called: "star", at: position)
-        let node = SKSpriteNode(imageNamed: "star")
-        node.name = "star"
-        node.position = position
+        let node = createNode(called: "star", at: position)
         
         node.physicsBody = SKPhysicsBody(circleOfRadius: node.size.width / 2)
         node.physicsBody?.isDynamic = false
@@ -178,10 +170,7 @@ class GameScene: SKScene, SKPhysicsContactDelegate {
     }
     
     func loadFinishPoint(at position: CGPoint) {
-        let node = SKSpriteNode(imageNamed: "finish")
-        node.name = "finish"
-        node.position = position
-//        let node = createNode(called: "finish", at: position)
+        let node = createNode(called: "finish", at: position)
         
         node.physicsBody = SKPhysicsBody(circleOfRadius: node.size.width / 2)
         node.physicsBody?.isDynamic = false
