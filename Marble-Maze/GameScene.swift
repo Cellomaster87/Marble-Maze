@@ -15,12 +15,14 @@ enum CollisionTypes: UInt32 {
     case star = 4
     case vortex = 8
     case finish = 16
+    case teleport = 32
 }
 
 class GameScene: SKScene, SKPhysicsContactDelegate {
     // MARK: - Properties
     var player: SKSpriteNode!
     var lastTouchPosition: CGPoint?
+    var isTeleporting = false
     
     var motionManager: CMMotionManager?
     var acceleration: Double = 50.0
@@ -91,6 +93,10 @@ class GameScene: SKScene, SKPhysicsContactDelegate {
                     loadStar(at: position)
                 } else if letter == "f" {
                     loadFinishPoint(at: position)
+                } else if letter == "d" { // departure
+                    loadTeleport(at: position, isDeparture: true)
+                } else if letter == "a" { // arrival
+                    loadTeleport(at: position, isDeparture: false)
                 } else if letter == " " {
                     // do nothing
                 } else {
@@ -182,6 +188,30 @@ class GameScene: SKScene, SKPhysicsContactDelegate {
         levelNodes.append(node)
     }
     
+    func loadTeleport(at position: CGPoint, isDeparture: Bool) {
+        let node = createNode(called: "teleport", at: position)
+        
+        if isDeparture {
+            node.name = "departure"
+        } else {
+            node.name = "arrival"
+        }
+        
+        let shrinkDown = SKAction.scale(to: 0.75, duration: 0.25)
+        let expand = SKAction.scale(to: 1, duration: 0.25)
+        let sequence = SKAction.sequence([shrinkDown, expand])
+        node.run(SKAction.repeatForever(sequence))
+        
+        node.physicsBody = SKPhysicsBody(circleOfRadius: node.size.width / 2)
+        node.physicsBody?.isDynamic = false
+        
+        node.physicsBody?.categoryBitMask = CollisionTypes.teleport.rawValue
+        node.physicsBody?.contactTestBitMask = CollisionTypes.player.rawValue
+        node.physicsBody?.collisionBitMask = 0
+        addChild(node)
+        levelNodes.append(node)
+    }
+    
     func createNode(called nodeName: String, at position: CGPoint) -> SKSpriteNode {
         let node = SKSpriteNode(imageNamed: nodeName)
         node.name = nodeName
@@ -253,6 +283,32 @@ class GameScene: SKScene, SKPhysicsContactDelegate {
             
             loadLevel()
             createPlayer()
+        } else if node.name == "departure" {
+            guard !isTeleporting else { return }
+            
+            if let teleport = self.childNode(withName: "arrival") {
+                isTeleporting = true
+                player.physicsBody?.isDynamic = false // temporarily
+                
+                let move = SKAction.move(to: node.position, duration: 0.25)
+                let scaleDown = SKAction.scale(to: 0.001, duration: 0.25)
+                let teleportTo = SKAction.move(to: teleport.position, duration: 0.01)
+                let scaleUp = SKAction.scale(to: 1, duration: 0.25)
+                let restoreDynamic = SKAction.run { [weak self] in
+                    self?.player.physicsBody?.isDynamic = true
+                }
+                let sequence = SKAction.sequence([move, scaleDown, teleportTo, scaleUp, restoreDynamic])
+                player.run(sequence)
+                
+                teleport.name = "departure"
+                node.name = "arrival"
+                
+                DispatchQueue.main.asyncAfter(deadline: .now() + 2) { [weak self] in
+                    self?.isTeleporting = false
+                }
+            }
+        } else {
+            return
         }
     }
 }
